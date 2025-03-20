@@ -14,6 +14,7 @@
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -105,17 +106,14 @@
             font-size: 1rem;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            position: absolute;
-            bottom: 20px; /* Adjusted to ensure it's visible */
-            left: 50%;
-            transform: translateX(-50%);
+            margin-top: 30px; /* Space between gift box and button */
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
 
         .click-here-button:hover {
             background-color: #ff6f61;
             color: #fff;
-            transform: translateX(-50%) scale(1.1);
+            transform: scale(1.1);
         }
 
         /* Floating Animation */
