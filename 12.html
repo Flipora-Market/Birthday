@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Keerthana!</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #ff6f61;
+            animation: bounce 2s infinite;
+        }
+
+        .birthday-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .birthday-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .message {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .highlight {
+            color: #ff6f61;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Birthday Girl Image */
+        .birthday-girl {
+            position: absolute;
+            top: -50px; /* Adjust based on image size */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #ff6f61;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .birthday-girl {
+                width: 120px;
+                height: 120px;
+                top: -0px; /* Adjust for smaller screens */
+		position: unset;
+            }
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #333;
+            color: #f9f9f9;
+        }
+
+        .dark-mode .birthday-card {
+            background: #444;
+            color: #f9f9f9;
+        }
+
+        .dark-mode .highlight {
+            color: #ff6f61;
+        }
+
+        .dark-mode .birthday-girl {
+            border-color: #ff6f61;
+        }
+
+        /* Animations */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Confetti Effect */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6f61;
+            animation: confetti-fall 5s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* Balloon Styles */
+        .balloon {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            border-radius: 50%;
+            bottom: -100px;
+            animation: float-balloon 8s ease-in infinite;
+            z-index: 0;
+        }
+
+        .balloon::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.3);
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes float-balloon {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-100vh) translateX(20px);
+            }
+            100% {
+                transform: translateY(-200vh) translateX(-20px);
+            }
+        }
+
+        /* Toggle Button */
+        .toggle-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .toggle-button:hover {
+            background-color: #ff4a3d;
+        }
+
+        /* Media Queries for Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .message {
+                font-size: 0.9rem;
+            }
+
+            .footer {
+                font-size: 0.8rem;
+            }
+
+            .toggle-button {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .balloon {
+                width: 40px;
+                height: 60px;
+            }
+
+            .balloon::before {
+                height: 40px;
+            }
+
+            /* Center Birthday Card on Mobile */
+            .birthday-card {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 90%;
+                max-width: 90%;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            .message {
+                font-size: 0.8rem;
+            }
+
+            .footer {
+                font-size: 0.7rem;
+            }
+
+            .toggle-button {
+                padding: 5px 10px;
+                font-size: 0.7rem;
+            }
+
+            .balloon {
+                width: 30px;
+                height: 50px;
+            }
+
+            .balloon::before {
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dark Mode Toggle Button -->
+    <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+    <!-- Birthday Girl Image -->
+    <img src="https://instagram.fcjb5-2.fna.fbcdn.net/v/t51.2885-19/436296783_843404324492048_4504591846027271905_n.jpg?stp=dst-jpg_s320x320_tt6&_nc_ht=instagram.fcjb5-2.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QHB8i5G50ekjLh9Ju8BQ72fVA0BNAuj5mncZigJ_wC6RasCu-8iwvVR08Ox5dIClX0dUdKV1HRzlEphmRLjE4hX&_nc_ohc=jJLsQGlHFDEQ7kNvgGmgz5D&_nc_gid=O--JH5rT_-3x2b1T_hYXAQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AYGbprNkteW_I7u2LfXi6IB1wY17YrzMOkhbghqg50SRzQ&oe=67E224A3&_nc_sid=8b3546" alt="Birthday Girl" class="birthday-girl">
+
+    <!-- Birthday Card -->
+    <div class="birthday-card">
+        <h1>Happy Birthday, <span class="highlight">Keerthana</span>! 🎉</h1>
+        <img src="https://via.placeholder.com/500x300.png?text=Birthday+Celebration" alt="Birthday Celebration">
+        <div class="message">
+            <p>Dear Keerthana,</p>
+            <p>Wishing you a day filled with joy, love, and endless blessings! May this year bring you success and amazing memories. Have the best birthday ever!</p>
+        </div>
+        <div class="footer">
+            <p>🎂 Celebrate and make it a day to remember! 🎈</p>
+        </div>
+    </div>
+
+    <!-- Confetti Effect -->
+    <div id="confetti-container"></div>
+
+    <!-- Balloons -->
+    <div id="balloon-container"></div>
+
+    <script>
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        // Confetti Effect
+        const confettiContainer = document.getElementById('confetti-container');
+
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = `${Math.random() * 100}vw`;
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            confettiContainer.appendChild(confetti);
+
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }
+
+        setInterval(createConfetti, 200);
+
+        // Balloon Effect
+        const balloonContainer = document.getElementById('balloon-container');
+        const colors = ['#ff6f61', '#6b5b95', '#88b04b', '#f7cac9', '#92a8d1', '#955251'];
+
+        function createBalloon() {
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            balloon.style.left = `${Math.random() * 100}vw`;
+            balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            balloon.style.animationDuration = `${Math.random() * 6 + 4}s`;
+            balloonContainer.appendChild(balloon);
+
+            setTimeout(() => {
+                balloon.remove();
+            }, 8000);
+        }
+
+        setInterval(createBalloon, 1000);
+    </script>
+</body>
+</html>
